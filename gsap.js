@@ -82,7 +82,7 @@ gsap.from("#icon-contact", {
     ease: "power1.inOut"
   });
 
-// GSAP Animation for Phone Icon
+// GSAP Animation for Icon's
 gsap.to("#phone-reserve", {
     scale: 1.2,
     repeat: -1,
@@ -100,3 +100,46 @@ gsap.to("#phone-reserve", {
     duration: 1,
     ease: "ease.inOut",
   });
+
+document.addEventListener('DOMContentLoaded', function() {
+ 
+  gsap.fromTo("#email-icon i", {
+    scale: 1,
+    rotation: 0,
+  }, {
+    scale: 1.3,
+    rotation: 360,
+    repeat: 2,
+    yoyo: true,
+    duration: 4,
+    ease: "power1.inOut",
+    delay: 0.2,
+  });
+
+  gsap.fromTo("#phone-icon i", {
+    scale: 1,
+    rotation: 0,
+  }, {
+    scale: 1.2,
+    rotation: 360,
+    repeat: 2,
+    yoyo: true,
+    duration: 5,
+    ease: "power1.inOut",
+    delay: 0.4,
+  });
+
+  gsap.fromTo("#address-icon i", {
+    scale: 1,
+    rotation: 0,
+  }, {
+    scale: 1.4,
+    rotation: 360,
+    repeat: 2,
+    yoyo: true,
+    duration: 6,
+    ease: "power1.inOut",
+    delay: 0.6,
+  });
+});
+

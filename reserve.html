@@ -19,60 +19,71 @@
 
 </head>
 
-<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
-
-<!-- Loading Animation -->
-<div id="loader" class="fixed inset-0 bg-white dark:bg-gray-900 flex items-center justify-center z-50">
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans relative">
+  
+  <!-- START NAVBAR-->
+  <!-- Loading Animation -->
+  <div id="loader" class="fixed inset-0 bg-white dark:bg-gray-900 flex items-center justify-center z-50">
     <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-indigo-500"></div>
   </div>
   
   <!-- Main Content -->
   <div id="content" class="opacity-0">
-   
-      <!-- Navbar & Mobile Menu -->
-      <nav class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-40">
-          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
-              <div class="flex items-center w-full md:w-auto justify-start md:justify-center">
-                <a href="index.html" class="flex items-center space-x-2">
-                  <!-- Camera Icon -->
-                  <i class="fas fa-camera-retro text-indigo-600 dark:text-indigo-400 text-xl"></i>
-                  <!-- Text -->
-                  <span class="font-bold text-xl text-indigo-600 dark:text-indigo-400">  XY Photography</span>
-              </a>
-              
-          </div>
-      
+  
+
+  
+  <!-- Navbar & Mobile Menu -->
+  <nav class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
+      <div class="flex items-center w-full md:w-auto justify-start md:justify-center">
+  
+        <a href="index.html" class="flex items-center space-x-2" id="logo">
+          <!-- Camera Icon -->
+          <i class="fas fa-camera-retro text-indigo-600 dark:text-white-400 text-xl"></i>
+          <!-- Text -->
+          <span class="font-bold text-xl text-indigo-600 dark:text-white-400">XY Photography</span>
+        </a>
+
+      </div>
+  
       <!-- Desktop Menu on the right -->
-            <div class="hidden md:flex space-x-4 items-center">
-             <a href="index.html#features" class="scroll-mt-16 hover:text-indigo-600 dark:hover:text-indigo-400">Услуги</a>
-             <a href="index.html#how" class="hover:text-indigo-600 dark:hover:text-indigo-400">Процес</a>
-             <a href="index.html#pricing" class="hover:text-indigo-600 dark:hover:text-indigo-400">Пакети</a>
-             <a href="about.html" class="block w-full text-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">За нас</a>
-             <a href="reserve.html" class="bg-indigo-600 text-white px-4 py-2 rounded-full hover:bg-indigo-700">Book</a>
-            </div>
-      
+      <div class="hidden md:flex space-x-4 items-center">
+        <a href="index.html#features" class="hover:text-indigo-600 dark:hover:text-indigo-400">Услуги</a>
+        <a href="index.html#how" class="hover:text-indigo-600 dark:hover:text-indigo-400">Процес</a>
+        <a href="index.html#pricing" class="hover:text-indigo-600 dark:hover:text-indigo-400">Пакети</a>
+        <a href="about.html" class="block w-full text-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">За нас</a>
+        <a href="reserve.html" class="bg-indigo-600 text-white px-4 py-2 rounded-full hover:bg-indigo-700">Book</a>
+        <a href="index.html" class="block w-full text-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+          <i class="fas fa-home text-lg"></i> Home
+        </a>       
+      </div>
+  
       <!-- Mobile & Dark Mode Toggle -->
-            <div class="flex items-center space-x-4">
-              <button id="dark-toggle" class="px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded">🌙</button>
-              <button id="menu-button" class="text-indigo-600 dark:text-indigo-400 focus:outline-none md:hidden text-2xl">☰</button>
-            </div>
-          </div>
-        </nav>
-        
-      <!-- Mobile Menu -->
-        <div id="mobile-menu" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 z-50 transform transition-transform duration-300 ease-in-out -translate-y-full md:hidden">
-            <div class="flex justify-end px-4 pt-4">
-            <button id="close-menu" class="text-lg text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white focus:outline-none">✖</button>
-            </div>
-          <div class="flex flex-col items-center space-y-2 py-4">
-            <a href="index.html#features" class="scroll-mt-16 block w-full text-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Услуги</a>
-            <a href="index.html#how" class="block w-full text-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Процес</a>
-            <a href="index.html#pricing" class="block w-full text-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Пакети</a>
-            <a href="about.html" class="block w-full text-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">За нас</a>
-            <a href="reserve.html" class="block w-full text-center px-4 py-2 bg-indigo-600 text-white hover:bg-indigo-700">Закажи Сесија</a>
-          </div>
-        </div>
-  </div>  
+      <div class="flex items-center space-x-4">
+        <button id="dark-toggle" class="px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded">🌙</button>
+        <button id="menu-button" class="text-indigo-600 dark:text-indigo-400 focus:outline-none md:hidden text-2xl">☰</button>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 z-50 transform transition-transform duration-300 ease-in-out -translate-y-full md:hidden">
+    <div class="flex justify-end px-4 pt-4">
+      <button id="close-menu" class="text-lg text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white focus:outline-none">✖</button>
+    </div>
+    <div class="flex flex-col items-center space-y-2 py-4">
+      <a href="index.html#features" class="block w-full text-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Услуги</a>
+      <a href="index.html#how" class="block w-full text-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Процес</a>
+      <a href="index.html#pricing" class="block w-full text-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Пакети</a>
+      <a href="about.html" class="block w-full text-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">За нас</a>
+      <a href="reserve.html" class="block w-full text-center px-4 py-2 bg-indigo-600 text-white hover:bg-indigo-700">Book</a>
+      <a href="index.html" class="block w-full text-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+        <i class="fas fa-home text-lg"></i> Home
+      </a>
+      
+    </div>
+  </div>
+  <!-- END NAVBAR-->
 
 <!-- PHONE RESERVATION SECTION -->
 <section id="phone-reservation" class="bg-sliver-600 text-black dark:text-white py-10">
@@ -114,33 +125,67 @@
     </div>
   </section>
 
-  <!-- CONTACT INFO + MAP -->
-  <section class="bg-white dark:bg-gray-800 py-16">
-    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10">
-      <!-- CONTACT INFO -->
-      <div>
-        <h3 class="text-2xl font-semibold mb-4">Контакт Информации</h3>
-        <p class="mb-2"><strong>E-mail:</strong> frametime@example.com</p>
-        <p class="mb-2"><strong>Телефон:</strong> +389 70 123 456</p>
-        <p class="mb-2"><strong>Адреса:</strong> Ул. Пример бр. 10, Крушево</p>
-      </div>
 
-      <!-- MAP -->
-      <div>
-        <h3 class="text-2xl font-semibold mb-4">Нашата Локација</h3>
-        <iframe 
-          src="https://www.google.com/maps/place/Kru%C5%A1evo,+Nordmazedonien/@41.3680437,21.2494343,17.75z/data=!4m6!3m5!1s0x1356cf40832edc4b:0xc5146144d60cecb1!8m2!3d41.3705595!4d21.2502223!16zL20vMDd2NjZq?entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D" 
-          width="100%" 
-          height="300" 
-          class="rounded shadow"
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
+  <!-- CONTACT INFO + MAP -->
+<section class="bg-white dark:bg-gray-800 py-20">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-start">
+    
+<!-- CONTACT INFO -->
+<div>
+  <h3 class="text-3xl font-bold text-gray-800 dark:text-white mb-6">Контакт Информации</h3>
+
+  <ul class="space-y-6 text-lg text-gray-700 dark:text-gray-300">
+    <!-- Email -->
+    <li class="flex items-center space-x-3" id="email-icon">
+      <i class="fas fa-envelope text-indigo-600 text-xl icon-effect"></i>
+      <span>
+        <strong>E-mail:</strong>
+        <a href="mailto:frametime@example.com" class="text-blue-600 hover:underline">
+          frametime@example.com
+        </a>
+      </span>
+    </li>
+
+    <!-- Phone -->
+    <li class="flex items-center space-x-3" id="phone-icon">
+      <i class="fas fa-phone-alt text-indigo-600 text-xl icon-effect"></i>
+      <span>
+        <strong>Телефон:</strong>
+        <a href="tel:+38970123456" class="text-blue-600 hover:underline">
+          +389 70 123 456
+        </a>
+      </span>
+    </li>
+
+    <!-- Address -->
+    <li class="flex items-center space-x-3" id="address-icon">
+      <i class="fas fa-map-marker-alt text-indigo-600 text-xl icon-effect"></i>
+      <span>
+        <strong>Адреса:</strong> Ул. Пример бр. 10, Крушево
+      </span>
+    </li>
+
+  </ul>
+</div>
+
+
+
+   
+   <!-- MAP -->
+    <div data-aos="fade-up" data-aos-delay="200">
+      <h3 class="text-2xl font-semibold mb-4">Нашата Локација</h3>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8483.419669004987!2d21.249028449999997!3d41.37086655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1356cf40832edc4b%3A0xc5146144d60cecb1!2sKrushevo%2C%20North%20Macedonia!5e1!3m2!1sen!2sde!4v1746541904711!5m2!1sen!2sde" 
+      width=100% 
+      height="300" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- FOOTER -->
   <footer class="bg-gray-800 text-white py-6 text-center">
@@ -151,6 +196,7 @@
   <script src="scripts.js"></script>
   <script src="theme.js"></script>
   <script src="gsap.js"></script>
+  
 
 </body>
 </html>

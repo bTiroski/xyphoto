@@ -4,7 +4,8 @@ const menuButton = document.getElementById('menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
 const darkToggle = document.getElementById('dark-toggle');
 const closeMenuButton = document.getElementById('close-menu');
-/* const logo = document.querySelector('logo'); */
+const logo = document.querySelector('#logo');
+
 
 
 // Toggle mobile menu
@@ -32,22 +33,22 @@ document.querySelectorAll('#mobile-menu a').forEach(link => {
 
 // Ensure the DOM is fully loaded before attaching the event
 document.addEventListener('DOMContentLoaded', function() {
-  // Get the logo element
-  const logo = document.querySelector('#logo');
-
   // Add click event listener
   logo.addEventListener('click', function(event) {
     // Prevent the default anchor link behavior (scrolling)
     event.preventDefault();
 
-    // Scroll smoothly to the #hero section
-    document.querySelector('#hero').scrollIntoView({ behavior: 'smooth' });
-
+     // Scroll smoothly to the top of the page
+     window.scrollTo({ top: 0, behavior: 'smooth' });
+ 
+    /*
     // Optionally, refresh the page after a delay (for smoother experience)
     setTimeout(function() {
       location.reload();
     }, 500); // 0.5 second delay before refreshing the page
+    */
   });
+  
 });
 
 
