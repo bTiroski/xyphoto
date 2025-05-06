@@ -1,0 +1,103 @@
+html {
+  scroll-behavior: smooth;    
+   }
+  #loader { transition: opacity 0.5s ease; }
+  #hero {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  }
+  .scrolling-text {
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+  }
+  .scrolling-text span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scrolling 20s linear infinite;
+  }
+  @keyframes scrolling {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+  .feature-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+   /* Section Styling */
+   .scrolling-text {
+    position:relative;
+    width: 100%;
+    height: 80px; /* Adjust height to your preference */
+    overflow: hidden;
+    background-color: #f9fafb; /* Background color */
+    }
+
+  /* Styling for the scrolling text */
+  .scrolling-content {
+    position: absolute;
+    white-space: nowrap;
+    font-size: 20px; /* Adjust the font size */
+    color: #4a4a4a; /* Default text color visible both in light and dark modes */
+    animation: scrollText 15s linear infinite; /* Adjust duration for slower scroll */
+    
+    }
+
+  /* Keyframes for scroll effect */
+  @keyframes scrollText {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  /* Hover effect to change text color */
+  .scrolling-content:hover {
+    color: #5a67d8; /* Text color change on hover */
+    cursor: pointer;
+  }
+
+
+    /* Section Styling */
+    .scrolling-text {
+      position:relative;
+      width: 100%;
+      height: 80px; /* Adjust height to your preference */
+      overflow: hidden;
+      background-color: #f9fafb; /* Background color */
+      }
+  
+    /* Styling for the scrolling text */
+    .scrolling-content {
+      position: absolute;
+      white-space: nowrap;
+      font-size: 20px; /* Adjust the font size */
+      color: #4a4a4a; /* Default text color visible both in light and dark modes */
+      animation: scrollText 15s linear infinite; /* Adjust duration for slower scroll */
+      
+      }
+  
+    /* Keyframes for scroll effect */
+    @keyframes scrollText {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  
+    /* Hover effect to change text color */
+    .scrolling-content:hover {
+      color: #5a67d8; /* Text color change on hover */
+      cursor: pointer;
+    }
+
+    .text-shadow-lg {
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    }
+    

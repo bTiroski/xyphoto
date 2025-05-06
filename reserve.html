@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="mk"> <!-- можеш да го тргнеш class="dark" ако користиш JS toggle -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Резервации | XY Photography</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+</head>
+
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+<!-- Loading Animation -->
+<div id="loader" class="fixed inset-0 bg-white dark:bg-gray-900 flex items-center justify-center z-50">
+    <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-indigo-500"></div>
+  </div>
+  
+  <!-- Main Content -->
+  <div id="content" class="opacity-0">
+   
+      <!-- Navbar & Mobile Menu -->
+      <nav class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-40">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
+              <div class="flex items-center w-full md:w-auto justify-start md:justify-center">
+                <a href="index.html" class="flex items-center space-x-2">
+                  <!-- Camera Icon -->
+                  <i class="fas fa-camera-retro text-indigo-600 dark:text-indigo-400 text-xl"></i>
+                  <!-- Text -->
+                  <span class="font-bold text-xl text-indigo-600 dark:text-indigo-400">  XY Photography</span>
+              </a>
+              
+          </div>
+      
+      <!-- Desktop Menu on the right -->
+            <div class="hidden md:flex space-x-4 items-center">
+             <a href="index.html#features" class="scroll-mt-16 hover:text-indigo-600 dark:hover:text-indigo-400">Услуги</a>
+             <a href="index.html#how" class="hover:text-indigo-600 dark:hover:text-indigo-400">Процес</a>
+             <a href="index.html#pricing" class="hover:text-indigo-600 dark:hover:text-indigo-400">Пакети</a>
+             <a href="about.html" class="block w-full text-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">За нас</a>
+             <a href="reserve.html" class="bg-indigo-600 text-white px-4 py-2 rounded-full hover:bg-indigo-700">Book</a>
+            </div>
+      
+      <!-- Mobile & Dark Mode Toggle -->
+            <div class="flex items-center space-x-4">
+              <button id="dark-toggle" class="px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded">🌙</button>
+              <button id="menu-button" class="text-indigo-600 dark:text-indigo-400 focus:outline-none md:hidden text-2xl">☰</button>
+            </div>
+          </div>
+        </nav>
+        
+      <!-- Mobile Menu -->
+        <div id="mobile-menu" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 z-50 transform transition-transform duration-300 ease-in-out -translate-y-full md:hidden">
+            <div class="flex justify-end px-4 pt-4">
+            <button id="close-menu" class="text-lg text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white focus:outline-none">✖</button>
+            </div>
+          <div class="flex flex-col items-center space-y-2 py-4">
+            <a href="index.html#features" class="scroll-mt-16 block w-full text-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Услуги</a>
+            <a href="index.html#how" class="block w-full text-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Процес</a>
+            <a href="index.html#pricing" class="block w-full text-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Пакети</a>
+            <a href="about.html" class="block w-full text-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">За нас</a>
+            <a href="reserve.html" class="block w-full text-center px-4 py-2 bg-indigo-600 text-white hover:bg-indigo-700">Закажи Сесија</a>
+          </div>
+        </div>
+  </div>  
+
+<!-- PHONE RESERVATION SECTION -->
+<section id="phone-reservation" class="bg-sliver-600 text-black dark:text-white py-10">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-semibold mb-6">Hајбрза можност за резервација е телефонот</h2>
+      <div class="flex justify-center items-center space-x-6">
+        <!-- Phone Icon with Continuous GSAP Animation -->
+        <i id="phone-reserve" class="fas fa-phone-alt text-4xl text-black dark:text-white"></i>
+        <p class="text-xl font-medium leading-relaxed">Контактирајте не на <a href="tel:+38970123456" class="font-bold text-black dark:text-white hover:underline">+389 70 123 456</a></p>
+      </div>
+    </div>
+</section>
+
+  
+
+  <!-- CONTACT FORM SECTION -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Резервирај со Порака</h2>
+      <form class="bg-white dark:bg-gray-800 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <div class="mb-4">
+          <label class="block text-sm font-bold mb-2" for="name">Име и Презиме</label>
+          <input class="shadow appearance-none border border-gray-300 dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Вашето име">
+        </div>
+        <div class="mb-4">
+          <label class="block text-sm font-bold mb-2" for="email">E-mail Адреса</label>
+          <input class="shadow appearance-none border border-gray-300 dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="example@email.com">
+        </div>
+        <div class="mb-6">
+          <label class="block text-sm font-bold mb-2" for="message">Порака</label>
+          <textarea class="shadow appearance-none border border-gray-300 dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" rows="4" placeholder="Ваша порака..."></textarea>
+        </div>
+        <div class="flex items-center justify-between">
+          <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+            Испрати
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- CONTACT INFO + MAP -->
+  <section class="bg-white dark:bg-gray-800 py-16">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10">
+      <!-- CONTACT INFO -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-4">Контакт Информации</h3>
+        <p class="mb-2"><strong>E-mail:</strong> frametime@example.com</p>
+        <p class="mb-2"><strong>Телефон:</strong> +389 70 123 456</p>
+        <p class="mb-2"><strong>Адреса:</strong> Ул. Пример бр. 10, Крушево</p>
+      </div>
+
+      <!-- MAP -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-4">Нашата Локација</h3>
+        <iframe 
+          src="https://www.google.com/maps/place/Kru%C5%A1evo,+Nordmazedonien/@41.3680437,21.2494343,17.75z/data=!4m6!3m5!1s0x1356cf40832edc4b:0xc5146144d60cecb1!8m2!3d41.3705595!4d21.2502223!16zL20vMDd2NjZq?entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D" 
+          width="100%" 
+          height="300" 
+          class="rounded shadow"
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-800 text-white py-6 text-center">
+    © 2025 FrameTime Photography. Сите права задржани.
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="scripts.js"></script>
+  <script src="theme.js"></script>
+  <script src="gsap.js"></script>
+
+</body>
+</html>

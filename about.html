@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="mk" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="language" content="mk" />
+  <title>За Нас | XY Photography</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS (Animate On Scroll) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+    <!-- Loading Animation -->
+    <div id="loader" class="fixed inset-0 bg-white dark:bg-gray-900 flex items-center justify-center z-50">
+        <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-indigo-500"></div>
+      </div>
+      
+      <!-- Main Content -->
+      <div id="content" class="opacity-0">
+       
+          <!-- Navbar & Mobile Menu -->
+          <nav class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-40">
+              <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
+                  <div class="flex items-center w-full md:w-auto justify-start md:justify-center">
+                    <a href="index.html" class="flex items-center space-x-2">
+                      <!-- Camera Icon -->
+                      <i class="fas fa-camera-retro text-indigo-600 dark:text-indigo-400 text-xl"></i>
+                      <!-- Text -->
+                      <span class="font-bold text-xl text-indigo-600 dark:text-indigo-400">  XY Photography</span>
+                  </a>
+                  
+              </div>
+          
+          <!-- Desktop Menu on the right -->
+                <div class="hidden md:flex space-x-4 items-center">
+                 <a href="index.html#features" class="scroll-mt-16 hover:text-indigo-600 dark:hover:text-indigo-400">Услуги</a>
+                 <a href="index.html#how" class="hover:text-indigo-600 dark:hover:text-indigo-400">Процес</a>
+                 <a href="index.html#pricing" class="hover:text-indigo-600 dark:hover:text-indigo-400">Пакети</a>
+                 <a href="about.html" class="block w-full text-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">За нас</a>
+                 <a href="reserve.html" class="bg-indigo-600 text-white px-4 py-2 rounded-full hover:bg-indigo-700">Book</a>
+                </div>
+          
+          <!-- Mobile & Dark Mode Toggle -->
+                <div class="flex items-center space-x-4">
+                  <button id="dark-toggle" class="px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded">🌙</button>
+                  <button id="menu-button" class="text-indigo-600 dark:text-indigo-400 focus:outline-none md:hidden text-2xl">☰</button>
+                </div>
+              </div>
+            </nav>
+            
+          <!-- Mobile Menu -->
+            <div id="mobile-menu" class="fixed top-0 left-0 w-full bg-white dark:bg-gray-800 z-50 transform transition-transform duration-300 ease-in-out -translate-y-full md:hidden">
+                <div class="flex justify-end px-4 pt-4">
+                <button id="close-menu" class="text-lg text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white focus:outline-none">✖</button>
+                </div>
+              <div class="flex flex-col items-center space-y-2 py-4">
+                <a href="index.html#features" class="scroll-mt-16 block w-full text-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Услуги</a>
+                <a href="index.html#how" class="block w-full text-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Процес</a>
+                <a href="index.html#pricing" class="block w-full text-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">Пакети</a>
+                <a href="reserve.html" class="block w-full text-center px-4 py-2 bg-indigo-600 text-white hover:bg-indigo-700">Book</a>
+              </div>
+            </div>
+      </div>  
+
+  <!-- Main Content -->
+  <main class="py-20 px-4 max-w-6xl mx-auto space-y-20">
+
+    <!-- Тим -->
+    <section data-aos="fade-up">
+      <h2 class="text-4xl font-bold text-center mb-12">Запознајте го Нашиот Тим</h2>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
+
+        <!-- Член 1 -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://images.unsplash.com/photo-1493863641943-9b68992a8d07?w=500&auto=format&fit=crop&q=60" alt="Портрет на Џон Џонсон, фотограф" class="w-28 h-28 rounded-full mx-auto mb-4 object-cover" />
+          <h3 class="text-xl font-semibold mb-1">Џон Џонсон</h3>
+          <p class="text-indigo-500 dark:text-indigo-300 mb-2">Портретен и семеен фотограф</p>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">10+ години искуство, специјализиран за природна светлина и емотивни портрети.</p>
+        </div>
+
+        <!-- Член 2 -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://images.unsplash.com/photo-1512813498716-3e640fed3f39?w=500&auto=format&fit=crop&q=60" alt="Портрет на Џени Џекс, фотограф" class="w-28 h-28 rounded-full mx-auto mb-4 object-cover" />
+          <h3 class="text-xl font-semibold mb-1">Џени Џекс</h3>
+          <p class="text-indigo-500 dark:text-indigo-300 mb-2">Свадбен и настански фотограф</p>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">Фокусирана на вистински моменти и уметничка композиција со љубов кон деталите.</p>
+        </div>
+
+        <!-- Член 3 -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center" data-aos="fade-up" data-aos-delay="300">
+          <img src="https://images.unsplash.com/photo-1624949216539-cd17ef0a1a5a?w=500&auto=format&fit=crop&q=60" alt="Портрет на Томас Томевски, уредник" class="w-28 h-28 rounded-full mx-auto mb-4 object-cover" />
+          <h3 class="text-xl font-semibold mb-1">Томас Томевски</h3>
+          <p class="text-indigo-500 dark:text-indigo-300 mb-2">Фото и видео монтажа</p>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">Креативен уредник со страст за визуелни наративи и динамична монтажа.</p>
+        </div>
+
+      </div>
+    </section>
+
+<!-- Мисија -->
+<section class="bg-white dark:bg-gray-800 rounded-xl shadow-md px-6 py-12 max-w-4xl mx-auto text-center relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-indigo-100 dark:bg-indigo-900 opacity-20 rounded-full blur-2xl"></div>
+    
+    <div class="flex justify-center mb-4">
+      <i class="fas fa-bullseye text-5xl text-indigo-500 dark:text-indigo-300 animate-pulse"></i>
+    </div>
+    
+    <h2 class="text-3xl font-semibold mb-4 text-indigo-600 dark:text-indigo-400">Нашата Мисија</h2>
+    <p class="text-lg text-gray-700 dark:text-gray-300">
+      Да создадеме фотографии што ќе будат емоции и ќе раскажуваат реални приказни – природно, емотивно и професионално.
+    </p>
+  </section>
+  
+<!-- Приказна -->
+<section class="w-full bg-indigo-50 dark:bg-gray-700 py-20 text-center relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+    <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-300 dark:bg-indigo-900 opacity-10 rounded-full blur-2xl"></div>
+  
+    <div class="flex justify-center mb-6">
+      <i id="bookIcon" class="fas fa-book-open text-5xl text-indigo-700 dark:text-white animate-fadeIn"></i>
+    </div>
+  
+    <h2 class="text-3xl font-semibold mb-4 text-indigo-800 dark:text-white">Нашата Приказна</h2>
+    <p class="text-lg leading-relaxed max-w-4xl mx-auto px-6 text-gray-800 dark:text-gray-200">
+      XY Photography започна како страст за креативна фотографија и прерасна во професионална услуга која им помага на луѓето да ги зачуваат највредните моменти. Веруваме дека секој клиент има уникатна приказна која заслужува да биде овековечена со искреност и квалитет. <br><br>
+      Нашиот пат е исполнет со инспирација, емоции и постојано усовршување. Секој кадар е сведоштво на нашата посветеност и љубов кон фотографијата. Благодарение на довербата од клиентите, создаваме моменти што траат засекогаш.
+    </p>
+  </section>
+  
+  </section>
+  
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-400 text-center py-6 mt-20">
+    <p>&copy; 2025 XY Photography. Сите права се задржани.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      duration: 800,
+    });
+  </script>
+  <script src="scripts.js"></script>
+  <script src="theme.js"></script>
+  <script src="gsap.js"></script>
+
+</body>
+</html>
