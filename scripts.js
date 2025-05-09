@@ -73,6 +73,9 @@ AOS.init({
 });
 
 
+window.addEventListener('load', () => {
+  document.body.style.overflowX = 'hidden';
+});
 
 
 
