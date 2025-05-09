@@ -101,26 +101,10 @@ html {
       text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
     }
 
-/* Блокира хоризонтален скрол глобално */
-body {
-  overflow-x: hidden;
-}
-
-/* Го дебагира проблемот визуелно */
-* {
-  box-sizing: border-box;
-}
-
-img,
-section,
-div {
+section
+ {
   max-width: 100%;
 }
 
-/* Specific fix за GSAP/AOS animations што можат да прошируваат елементот */
-[data-aos],
-[data-aos-delay],
-[data-aos-duration] {
-  will-change: transform;
-}
+
     
