@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" class="dark transition-colors duration-500 scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XY Photography</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+
+    <body class="bg-gray-50 overflow-x-hidden dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans relative">
+      <!-- Loading Animation -->
+      <div id="loader" class="fixed inset-0 bg-white dark:bg-gray-900 flex items-center justify-center z-50">
+      <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-indigo-500"></div>
+      </div>
+
+      <!--NAVBAR-->
+      <div id="content" class="opacity-0">
+      <div id="navbar-placeholder"></div>
+
+ <!-- PHONE RESERVATION SECTION -->
+ <section id="phone-reservation" class="bg-sliver-600 text-black dark:text-white pt-20 py-10">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-semibold mb-6">Hајбрза можност за резервација е телефонот</h2>
+      <div class="flex justify-center items-center space-x-6">
+        <!-- Phone Icon with Continuous GSAP Animation -->
+        <i id="phone-reserve" class="fas fa-phone-alt text-4xl text-black dark:text-white"></i>
+        <p class="text-xl font-medium leading-relaxed">Контактирајте не на <a href="tel:+38970123456" class="font-bold text-black dark:text-white hover:underline">+389 70 123 456</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM SECTION -->
+<section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Резервирај со Порака</h2>
+      <form class="bg-white dark:bg-gray-800 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <div class="mb-4">
+          <label class="block text-sm font-bold mb-2" for="name">Име и Презиме</label>
+          <input class="shadow appearance-none border border-gray-300 dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Вашето име">
+        </div>
+        <div class="mb-4">
+          <label class="block text-sm font-bold mb-2" for="email">E-mail Адреса</label>
+          <input class="shadow appearance-none border border-gray-300 dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="example@email.com">
+        </div>
+        <div class="mb-6">
+          <label class="block text-sm font-bold mb-2" for="message">Порака</label>
+          <textarea class="shadow appearance-none border border-gray-300 dark:border-gray-600 rounded w-full py-2 px-3 text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" rows="4" placeholder="Ваша порака..."></textarea>
+        </div>
+        <div class="flex items-center justify-between">
+          <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+            Испрати
+          </button>
+        </div>
+      </form>
+      </div>
+</section>
+
+<!-- CONTACT INFO -->
+<section class="bg-white dark:bg-gray-800 py-20">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-start">
+    <div>
+    <h3 class="text-3xl font-bold text-gray-800 dark:text-white mb-6">Контакт Информации</h3>
+    <ul class="space-y-6 text-lg text-gray-700 dark:text-gray-300">
+      <!-- Email -->
+      <li class="flex items-center space-x-3" id="email-icon">
+      <i class="fas fa-envelope text-indigo-600 text-xl icon-effect"></i>
+      <span> <strong>E-mail:</strong>
+        <a href="mailto:xyphoto@example.com" class="text-blue-600 hover:underline"> xyphoto@example.com
+        </a>
+      </span>
+      </li>
+      <!-- Phone -->
+      <li class="flex items-center space-x-3" id="phone-icon">
+      <i class="fas fa-phone-alt text-indigo-600 text-xl icon-effect"></i>
+      <span> <strong>Телефон:</strong>
+        <a href="tel:+38970123456" class="text-blue-600 hover:underline"> +389 70 123 456</a>
+      </span>
+      </li>
+      <!-- Address -->
+     <li class="flex items-center space-x-3" id="address-icon">
+      <i class="fas fa-map-marker-alt text-indigo-600 text-xl icon-effect"></i>
+      <span>
+        <strong>Адреса:</strong> Ул. Пример бр. 10, Крушево
+      </span>
+      </li>
+    </ul>
+    </div>
+      <!-- MAP -->
+      <div data-aos="fade-up" data-aos-delay="200">
+      <h3 class="text-2xl font-semibold mb-4">Нашата Локација</h3>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8483.419669004987!2d21.249028449999997!3d41.37086655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1356cf40832edc4b%3A0xc5146144d60cecb1!2sKrushevo%2C%20North%20Macedonia!5e1!3m2!1sen!2sde!4v1746541904711!5m2!1sen!2sde" width=100%  height="300"  style="border:0;"  allowfullscreen=""  loading="lazy"  referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+  </div>
+</section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-800 text-white py-6 text-center">
+     © 2025 FrameTime Photography. Сите права задржани.
+    </footer>
+
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <script src="scripts.js"></script>
+   <script src="theme.js"></script>
+   <script src="gsap.js"></script>
+  
+  </body>
+</html>
+

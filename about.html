@@ -1,48 +1,29 @@
 <!DOCTYPE html>
-<html lang="mk" class="scroll-smooth dark">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="language" content="mk" />
-  <title>За Нас | XY Photography</title>
+<html lang="en" class="dark transition-colors duration-500 scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XY Photography</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <body class="bg-gray-50 overflow-x-hidden dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans relative">
+      <!-- Loading Animation -->
+      <div id="loader" class="fixed inset-0 bg-white dark:bg-gray-900 flex items-center justify-center z-50">
+      <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-indigo-500"></div>
+      </div>
 
-  <!-- AOS (Animate On Scroll) -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-
-  <!-- FontAwesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="styles.css" />
-
-  <!-- GSAP & ScrollTrigger -->
-  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-</head>
-
-<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans relative">
-
- <!-- START NAVBAR-->
-  <!-- Loading Animation -->
-  <div id="loader" class="fixed inset-0 bg-white dark:bg-gray-900 flex items-center justify-center z-50">
-    <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-indigo-500"></div>
-  </div>
-  
-  <!-- Main Content -->
-  <div id="content" class="opacity-0">
-  
-   <!-- START NAVBAR-->
+      <!--NAVBAR-->
       <div id="navbar-placeholder"></div>
-    <!-- END NAVBAR-->
-  <!-- END NAVBAR-->
-
 
   <!-- Main Content -->
   <main class="py-20 px-4 max-w-6xl mx-auto space-y-20">
-
     <!-- Тим -->
     <section data-aos="fade-up">
       <h2 class="text-4xl font-bold text-center mb-12">Запознајте го Нашиот Тим</h2>

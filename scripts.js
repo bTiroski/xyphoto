@@ -23,9 +23,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Close menu when clicking a link
       document.querySelectorAll("#mobile-menu a").forEach((link) => {
-        link.addEventListener("click", () => {
+        link.addEventListener("click", (event) => {
           mobileMenu.classList.add("-translate-y-full");
           mobileMenu.classList.remove("translate-y-0");
+
+          // Added logic for index.html# section links:
+          const href = link.getAttribute("href");
+          if (href && href.startsWith("index.html#")) {
+            // If we are already on index.html or root
+            if (
+              window.location.pathname.endsWith("index.html") ||
+              window.location.pathname === "/"
+            ) {
+              event.preventDefault(); // prevent page reload
+
+              const targetId = href.split("#")[1];
+              const targetEl = document.getElementById(targetId);
+              if (targetEl) {
+                targetEl.scrollIntoView({ behavior: "smooth" });
+                // Change URL hash without reload
+                history.replaceState(null, null, `#${targetId}`);
+              }
+            }
+            // If we are on another page, do not prevent default, allow navigation
+          }
         });
       });
 
@@ -85,4 +106,16 @@ AOS.init({
 
 window.addEventListener("load", () => {
   document.body.style.overflowX = "hidden";
+});
+
+// Scroll to target section if on index.html with a hash in the URL
+window.addEventListener("load", () => {
+  if (window.location.hash) {
+    const targetEl = document.querySelector(window.location.hash);
+    if (targetEl) {
+      setTimeout(() => {
+        targetEl.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  }
 });

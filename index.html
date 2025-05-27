@@ -3,237 +3,125 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <title>XY Photography</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link href="styles.css" rel="stylesheet" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    
   </head>
 
-  <body
-    class="bg-gray-50 overflow-x-hidden dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans relative"
-  >
+  <body class="bg-gray-50 overflow-x-hidden dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans relative">
+
     <!-- Loading Animation -->
     <div id="loader" class="fixed inset-0 bg-white dark:bg-gray-900 flex items-center justify-center z-50">
       <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-indigo-500"></div>
     </div>
 
-    <!-- Main Content -->
     <div id="content" class="opacity-0">
-
     <!-- START NAVBAR-->
-      <div id="navbar-placeholder"></div>
+    <div id="navbar-placeholder"></div>
     <!-- END NAVBAR-->
 
     <!-- HERO SECTION  -->
     <header id="hero" class="relative h-screen bg-white overflow-hidden">
+
       <div class="absolute inset-0">
-        <div
-          class="absolute -top-20 -right-20 w-80 h-80 bg-indigo-500 opacity-10 rounded-full blur-2xl animate-pulse z-0"
-        ></div>
-        <img
-          src="https://images.unsplash.com/photo-1527261834078-9b37d35a4a32"
-          alt="FrameTime Hero"
-          class="w-full h-full object-cover"
-        />
+        <div class="absolute -top-20 -right-20 w-80 h-80 bg-indigo-500 opacity-10 rounded-full blur-2xl animate-pulse z-0"></div>
+        <img src="https://images.unsplash.com/photo-1527261834078-9b37d35a4a32" alt="FrameTime Hero" class="w-full h-full object-cover"/>
         <div class="absolute inset-0 bg-black bg-opacity-50"></div>
       </div>
-      <div
-        class="relative z-10 flex flex-col justify-center items-center h-full text-center text-white px-4"
-      >
-        <h1 class="text-5xl md:text-6xl font-light tracking-wide mb-6">
-          FrameTime Photography
-        </h1>
-        <p class="text-lg md:text-xl font-light mb-10 max-w-2xl">
-          Вечни спомени низ професионален објектив. Природно. Емоционално. Ваше.
-        </p>
-        <a
-          href="reserve.html"
-          id="button-text-reserve"
-          class="bg-white text-black px-6 py-3 text-2xl rounded-full font-semibold hover:bg-gray-200 transition mt-10"
-        >
-          Book Now
-        </a>
+
+      <div class="relative z-10 flex flex-col justify-center items-center h-full text-center text-white px-4">
+        <h1 class="text-5xl md:text-6xl font-light tracking-wide mb-6"> XY Photography </h1>
+        <p class="text-lg md:text-xl font-light mb-10 max-w-2xl"> Вечни спомени низ професионален објектив. Природно. Емоционално. Ваше. </p>
+        <a href="order.html" id="button-text-reserve" class="bg-white text-black px-6 py-3 text-2xl rounded-full font-semibold hover:bg-gray-200 transition mt-10"> Book Now </a>
       </div>
+
     </header>
 
     <!-- ABOUT SECTION -->
-    <section
-      id="about"
-      class="py-20 bg-gray-100 dark:bg-gray-900 relative overflow-hidden"
-    >
-      <div
-        class="absolute -top-20 -left-20 w-80 h-80 bg-indigo-500 opacity-10 rounded-full blur-2xl animate-pulse z-0"
-      ></div>
+    <section id="about" class="py-20 bg-gray-100 dark:bg-gray-900 relative overflow-hidden">
+
+      <div class="absolute -top-20 -left-20 w-80 h-80 bg-indigo-500 opacity-10 rounded-full blur-2xl animate-pulse z-0"></div>
+
       <div class="max-w-5xl mx-auto px-4 text-center relative z-10">
-        <h2
-          id="about-title"
-          class="text-3xl md:text-4xl font-bold mb-6 text-gray-800 dark:text-white"
-        >
-          Кој Сме Ние?
-        </h2>
-        <p
-          id="about-text"
-          class="text-lg text-gray-900 dark:text-gray-300 mb-6"
-        >
+        <h2 id="about-title"class="text-3xl md:text-4xl font-bold mb-6 text-gray-800 dark:text-white">Кој Сме Ние?</h2>
+        <p id="about-text" class="text-lg text-gray-900 dark:text-gray-300 mb-6">
           Ние сме професионален фотографски тим кој верува дека секоја приказна
           заслужува да биде раскажана преку објективот. Нашата работа е
           фокусирана на автентичност, емоции и уникатен пристап за секој клиент.
         </p>
-        <a
-          id="about-button"
-          href="about.html"
-          class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-indigo-700 transition-transform transform hover:scale-105 shadow-md"
-        >
+        <a id="about-button" href="about.html" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-indigo-700 transition-transform transform hover:scale-105 shadow-md">
           Повеќе за Нас →
         </a>
       </div>
+
     </section>
 
     <!-- FEATURES SECTION -->
-    <section
-      id="features"
-      class="py-16 max-w-7xl mx-auto px-4 scroll-mt-16 relative overflow-hidden"
-    >
-      <h2 class="text-3xl font-bold text-center mb-10" data-aos="fade-up">
-        Нашите Услуги
-      </h2>
+    <section id="features"class="py-16 max-w-7xl mx-auto px-4 scroll-mt-16 relative overflow-hidden">
+
+      <h2 class="text-3xl font-bold text-center mb-10" data-aos="fade-up"> Нашите Услуги </h2>
+
       <div class="grid md:grid-cols-3 gap-8">
         <!-- Wedding Photography Card -->
-        <div
-          class="feature-card text-center p-6 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md hover:shadow-lg transition"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8V2VkZGluZ3xlbnwwfHwwfHx8MA%3D%3D"
-            alt="Wedding Photography"
-            class="mb-4 rounded-lg w-full h-48 object-cover"
-          />
+        <div class="feature-card text-center p-6 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8V2VkZGluZ3xlbnwwfHwwfHx8MA%3D%3D" alt="Wedding Photography" class="mb-4 rounded-lg w-full h-48 object-cover"/>
           <h3 class="font-semibold mb-2">Свадбени фотографии</h3>
-          <p>
-            Безвременски моменти од Вашиот посебен ден, фатени со љубов и
-            внимание.
-          </p>
-          <!-- "Повеќе" Button -->
-          <a
-            href="wedding-album.html"
-            class="inline-block bg-indigo-600 text-white px-6 py-3 mt-4 rounded-full text-sm font-semibold hover:bg-indigo-700 transition"
-            >Повеќе</a
-          >
+          <p>Безвременски моменти од Вашиот посебен ден, фатени со љубов ивнимание. </p>
+          <a href="wedding-album.html" class="inline-block bg-indigo-600 text-white px-6 py-3 mt-4 rounded-full text-sm font-semibold hover:bg-indigo-700 transition">Повеќе</a>
         </div>
 
         <!-- Family Photography Card -->
-        <div
-          class="feature-card text-center p-6 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg shadow-md hover:shadow-lg transition"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1588979355313-6711a095465f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFtaWx5JTIwcGhvdG98ZW58MHx8MHx8fDA%3D"
-            alt="Family Photography"
-            class="mb-4 rounded-lg w-full h-48 object-cover"
-          />
+        <div class="feature-card text-center p-6 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg shadow-md hover:shadow-lg transition"data-aos="fade-up"data-aos-delay="200">
+          <img src="https://images.unsplash.com/photo-1588979355313-6711a095465f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFtaWx5JTIwcGhvdG98ZW58MHx8MHx8fDA%3D" alt="Family Photography" class="mb-4 rounded-lg w-full h-48 object-cover"/>
           <h3 class="font-semibold mb-2">Фамилијарни сесии</h3>
-          <p>
-            Топли, емотивни и природни фотографии што ќе ги цените засекогаш.
-          </p>
-          <!-- "Повеќе" Button -->
-          <a
-            href="family-album.html"
-            class="inline-block bg-indigo-600 text-white px-6 py-3 mt-4 rounded-full text-sm font-semibold hover:bg-indigo-700 transition"
-            >Повеќе</a
-          >
+          <p>Топли, емотивни и природни фотографии што ќе ги цените засекогаш.</p>
+          <a href="family-album.html" class="inline-block bg-indigo-600 text-white px-6 py-3 mt-4 rounded-full text-sm font-semibold hover:bg-indigo-700 transition" >Повеќе</a>
         </div>
 
         <!-- Events and Nature Photography Card -->
-        <div
-          class="feature-card text-center p-6 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg shadow-md hover:shadow-lg transition"
-          data-aos="fade-up"
-          data-aos-delay="300"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8RXZlbnRzfGVufDB8fDB8fHww"
-            alt="Events and Nature Photography"
-            class="mb-4 rounded-lg w-full h-48 object-cover"
-          />
+        <div class="feature-card text-center p-6 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="300">
+          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8RXZlbnRzfGVufDB8fDB8fHww" alt="Events and Nature Photography" class="mb-4 rounded-lg w-full h-48 object-cover"/>
           <h3 class="font-semibold mb-2">Настани</h3>
-          <p>
-            Предавања, Новогодиншни, Велигденски и друг вид на Прослави на фирми
-            и ........
-          </p>
-          <!-- "Повеќе" Button -->
-          <a
-            href="events-album.html"
-            class="inline-block bg-indigo-600 text-white px-6 py-3 mt-4 rounded-full text-sm font-semibold hover:bg-indigo-700 transition"
-            >Повеќе</a
-          >
+          <p> Предавања, Новогодиншни, Велигденски и друг вид на Прослави на фирми  и ........</p>
+          <a href="events-album.html" class="inline-block bg-indigo-600 text-white px-6 py-3 mt-4 rounded-full text-sm font-semibold hover:bg-indigo-700 transition" >Повеќе</a>
         </div>
 
         <!-- Sport Photography Card -->
-        <div
-          class="feature-card text-center p-6 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg shadow-md hover:shadow-lg transition"
-          data-aos="fade-up"
-          data-aos-delay="300"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1701680813427-8e6f898e1d8f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fGdsZWl0c2NoaXJtZmxpZWdlbnxlbnwwfHwwfHx8MA%3D%3D"
-            alt="Events and Nature Photography"
-            class="mb-4 rounded-lg w-full h-48 object-cover"
-          />
+        <div class="feature-card text-center p-6 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="300">
+          <img src="https://images.unsplash.com/photo-1701680813427-8e6f898e1d8f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fGdsZWl0c2NoaXJtZmxpZWdlbnxlbnwwfHwwfHx8MA%3D%3D" alt="Events and Nature Photography" class="mb-4 rounded-lg w-full h-48 object-cover"/>
           <h3 class="font-semibold mb-2">Спорт</h3>
           <p>Спорт и спортски настани ........</p>
-          <!-- "Повеќе" Button -->
-          <a
-            href="sports-album.html"
-            class="inline-block bg-indigo-600 text-white px-6 py-3 mt-4 rounded-full text-sm font-semibold hover:bg-indigo-700 transition"
-            >Повеќе</a
-          >
+          <a href="sports-album.html" class="inline-block bg-indigo-600 text-white px-6 py-3 mt-4 rounded-full text-sm font-semibold hover:bg-indigo-700 transition" >Повеќе</a>
         </div>
 
         <!-- Concerts Photography Card -->
-        <div
-          class="feature-card text-center p-6 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg shadow-md hover:shadow-lg transition"
-          data-aos="fade-up"
-          data-aos-delay="300"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1499364615650-ec38552f4f34?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fG11c2ljJTIwY29uY2VydHxlbnwwfHwwfHx8MA%3D%3D"
-            alt="Events and Nature Photography"
-            class="mb-4 rounded-lg w-full h-48 object-cover"
-          />
+        <div class="feature-card text-center p-6 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="300">
+          <img src="https://images.unsplash.com/photo-1499364615650-ec38552f4f34?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fG11c2ljJTIwY29uY2VydHxlbnwwfHwwfHx8MA%3D%3D" alt="Events and Nature Photography" class="mb-4 rounded-lg w-full h-48 object-cover"/>
           <h3 class="font-semibold mb-2">Концерти</h3>
           <p>Музички концерти ........</p>
-          <!-- "Повеќе" Button -->
-          <a
-            href="music-album.html"
-            class="inline-block bg-indigo-600 text-white px-6 py-3 mt-4 rounded-full text-sm font-semibold hover:bg-indigo-700 transition"
-            >Повеќе</a
-          >
+          <a href="music-album.html" class="inline-block bg-indigo-600 text-white px-6 py-3 mt-4 rounded-full text-sm font-semibold hover:bg-indigo-700 transition" >Повеќе</a>
         </div>
       </div>
+
     </section>
 
     <!-- HOW IT WORKS SECTION -->
     <section id="how" class="py-16 bg-gray-100 dark:bg-gray-900 scroll-mt-16">
-      <h2 class="text-3xl font-bold text-center mb-10" data-aos="fade-up">
-        Како Работиме
-      </h2>
+      <h2 class="text-3xl font-bold text-center mb-10" data-aos="fade-up"> Како Работиме </h2>
+
       <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 text-center">
         <!-- Блок 1 -->
         <div>
-          <div
-            id="icon-contact"
-            class="mx-auto w-16 h-16 flex items-center justify-center bg-indigo-600 text-white rounded-full text-2xl mb-4"
-          >
+          <div id="icon-contact" class="mx-auto w-16 h-16 flex items-center justify-center bg-indigo-600 text-white rounded-full text-2xl mb-4">
             <i class="fas fa-phone-alt"></i>
           </div>
           <h4 class="font-bold mb-2">Контакт и Консултација</h4>
@@ -242,10 +130,7 @@
 
         <!-- Блок 2 -->
         <div>
-          <div
-            id="icon-camera"
-            class="mx-auto w-16 h-16 flex items-center justify-center bg-indigo-600 text-white rounded-full text-2xl mb-4"
-          >
+          <div id="icon-camera" class="mx-auto w-16 h-16 flex items-center justify-center bg-indigo-600 text-white rounded-full text-2xl mb-4">
             <i class="fas fa-camera"></i>
           </div>
           <h4 class="font-bold mb-2">Фотосесија</h4>
@@ -254,49 +139,38 @@
 
         <!-- Блок 3 -->
         <div>
-          <div
-            id="icon-delivery"
-            class="mx-auto w-16 h-16 flex items-center justify-center bg-indigo-600 text-white rounded-full text-2xl mb-4"
-          >
+          <div id="icon-delivery" class="mx-auto w-16 h-16 flex items-center justify-center bg-indigo-600 text-white rounded-full text-2xl mb-4">
             <i class="fas fa-image"></i>
           </div>
           <h4 class="font-bold mb-2">Испорака и Галерија</h4>
-          <p>
-            Уредени фотографии доставени дигитално или печатено, според договор.
-          </p>
+          <p> Уредени фотографии доставени дигитално или печатено, според договор.</p>
         </div>
+
       </div>
+
     </section>
 
     <!-- PRICING SECTION -->
     <section id="pricing" class="py-16 max-w-5xl mx-auto px-4 scroll-mt-16">
-      <h2 class="text-3xl font-bold text-center mb-10" data-aos="fade-up">
-        Пакети
-      </h2>
+      <h2 class="text-3xl font-bold text-center mb-10" data-aos="fade-up"> Пакети </h2>
+
       <div class="grid md:grid-cols-2 gap-8">
-        <div
-          class="border p-6 rounded-lg text-center bg-white dark:bg-gray-800"
-          data-aos="fade-right"
-        >
+
+        <div class="border p-6 rounded-lg text-center bg-white dark:bg-gray-800" data-aos="fade-right">
           <h3 class="font-semibold text-2xl">Основен Пакет</h3>
-          <p class="mt-4">
-            Идеален за семејни сесии и кратки настани. До 2 часа снимање или
-            сликање.
-          </p>
+          <p class="mt-4"> Идеален за семејни сесии и кратки настани. До 2 часа снимање или сликање.</p>
           <p class="mt-6 text-3xl font-bold">0000€</p>
         </div>
-        <div
-          class="border p-6 rounded-lg text-center bg-indigo-600 text-white"
-          data-aos="fade-left"
-        >
+
+        <div class="border p-6 rounded-lg text-center bg-indigo-600 text-white" data-aos="fade-left">
           <h3 class="font-semibold text-2xl">Премиум Пакет</h3>
-          <p class="mt-4">
-            Целосна покриеност на свадби, матури или комплексни настани.
-          </p>
+          <p class="mt-4"> Целосна покриеност на свадби, матури или комплексни настани.</p>
           <p class="mt-6 text-3xl font-bold">По договор *</p>
           <p class="mt-2">Цената варира бо зависност од побарувачката.</p>
         </div>
+
       </div>
+
     </section>
 
     <footer id="footer" class="bg-gray-800 text-gray-400 text-center py-6">
@@ -305,14 +179,13 @@
         <a href="#" class="hover:text-white">Галерија</a> |
         <a href="#" class="hover:text-white">Контакт</a>
       </p>
-      <p class="mt-4">
-        &copy; 2025 FrameTime Photography. Сите права задржани.
-      </p>
+      <p class="mt-4"> &copy; 2025 Tiroski. Сите права задржани.</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="scripts.js"></script>
     <script src="theme.js"></script>
     <script src="gsap.js"></script>
+
   </body>
 </html>
