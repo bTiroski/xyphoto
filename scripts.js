@@ -1,90 +1,101 @@
 tailwind.config = { darkMode: "class" };
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Load navbar.html and insert into placeholder
-  fetch("navbar.html")
-    .then((response) => response.text())
-    .then((data) => {
-      document.getElementById("navbar-placeholder").innerHTML = data;
+  const includes = [
+    { id: "navbar-placeholder", file: "navbar.html" },
+    { id: "footer-placeholder", file: "footer.html" }
+  ];
 
-      // After navbar is loaded, attach event listeners
+  document.addEventListener("DOMContentLoaded", function () {
+    includes.forEach((include) => {
+      fetch(include.file)
+        .then((response) => {
+          if (!response.ok) throw new Error(`Failed to load ${include.file}`);
+          return response.text();
+        })
+        .then((data) => {
+          document.getElementById(include.id).innerHTML = data;
 
-      const menuButton = document.getElementById("menu-button");
-      const mobileMenu = document.getElementById("mobile-menu");
-      const darkToggle = document.getElementById("dark-toggle");
-      const closeMenuButton = document.getElementById("close-menu");
-      const logo = document.querySelector("#logo");
+          // Додади логика само за navbar
+          if (include.id === "navbar-placeholder") {
+            // Attach navbar-related listeners
+            const menuButton = document.getElementById("menu-button");
+            const mobileMenu = document.getElementById("mobile-menu");
+            const darkToggle = document.getElementById("dark-toggle");
+            const closeMenuButton = document.getElementById("close-menu");
+            const logo = document.querySelector("#logo");
 
-      // Toggle mobile menu
-      menuButton.addEventListener("click", () => {
-        mobileMenu.classList.toggle("-translate-y-full");
-        mobileMenu.classList.toggle("translate-y-0");
-      });
+            if (menuButton && mobileMenu) {
+              menuButton.addEventListener("click", () => {
+                mobileMenu.classList.toggle("-translate-y-full");
+                mobileMenu.classList.toggle("translate-y-0");
+              });
 
-      // Close menu when clicking a link
-      document.querySelectorAll("#mobile-menu a").forEach((link) => {
-        link.addEventListener("click", (event) => {
-          mobileMenu.classList.add("-translate-y-full");
-          mobileMenu.classList.remove("translate-y-0");
+              document.querySelectorAll("#mobile-menu a").forEach((link) => {
+                link.addEventListener("click", (event) => {
+                  mobileMenu.classList.add("-translate-y-full");
+                  mobileMenu.classList.remove("translate-y-0");
 
-          // Added logic for index.html# section links:
-          const href = link.getAttribute("href");
-          if (href && href.startsWith("index.html#")) {
-            // If we are already on index.html or root
-            if (
-              window.location.pathname.endsWith("index.html") ||
-              window.location.pathname === "/"
-            ) {
-              event.preventDefault(); // prevent page reload
+                  const href = link.getAttribute("href");
+                  if (href && href.startsWith("index.html#")) {
+                    if (
+                      window.location.pathname.endsWith("index.html") ||
+                      window.location.pathname === "/"
+                    ) {
+                      event.preventDefault();
+                      const targetId = href.split("#")[1];
+                      const targetEl = document.getElementById(targetId);
+                      if (targetEl) {
+                        targetEl.scrollIntoView({ behavior: "smooth" });
+                        history.replaceState(null, null, `#${targetId}`);
+                      }
+                    }
+                  }
+                });
+              });
+            }
 
-              const targetId = href.split("#")[1];
-              const targetEl = document.getElementById(targetId);
-              if (targetEl) {
-                targetEl.scrollIntoView({ behavior: "smooth" });
-                // Change URL hash without reload
-                history.replaceState(null, null, `#${targetId}`);
+            if (closeMenuButton && mobileMenu) {
+              closeMenuButton.addEventListener("click", () => {
+                mobileMenu.classList.add("-translate-y-full");
+                mobileMenu.classList.remove("translate-y-0");
+              });
+            }
+
+            if (logo) {
+              logo.addEventListener("click", function (event) {
+                event.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              });
+            }
+
+            if (darkToggle) {
+              darkToggle.addEventListener("click", () => {
+                document.documentElement.classList.toggle("dark");
+                localStorage.setItem(
+                  "theme",
+                  document.documentElement.classList.contains("dark")
+                    ? "dark"
+                    : "light"
+                );
+              });
+
+              // Apply saved theme on load
+              if (
+                localStorage.getItem("theme") === "dark" ||
+                (!("theme" in localStorage) &&
+                  window.matchMedia("(prefers-color-scheme: dark)").matches)
+              ) {
+                document.documentElement.classList.add("dark");
+              } else {
+                document.documentElement.classList.remove("dark");
               }
             }
-            // If we are on another page, do not prevent default, allow navigation
           }
-        });
-      });
+        })
+        .catch((error) => console.error(`Error loading ${include.file}:`, error));
+    });
+  });
 
-      // Close menu on clicking the "X" button
-      closeMenuButton.addEventListener("click", () => {
-        mobileMenu.classList.add("-translate-y-full");
-        mobileMenu.classList.remove("translate-y-0");
-      });
-
-      // Logo click scroll to top
-      logo.addEventListener("click", function (event) {
-        event.preventDefault();
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-
-      // Dark mode toggle
-      darkToggle.addEventListener("click", () => {
-        document.documentElement.classList.toggle("dark");
-        if (document.documentElement.classList.contains("dark")) {
-          localStorage.setItem("theme", "dark");
-        } else {
-          localStorage.setItem("theme", "light");
-        }
-      });
-
-      // On page load, set theme from localStorage
-      if (
-        localStorage.getItem("theme") === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-    })
-    .catch((error) => console.error("Error loading navbar:", error));
-});
 
 // Loader
 window.addEventListener("load", () => {
